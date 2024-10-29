@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 
 const Note = ({ note, toggleImportance }) => {
-  const label = note.important ? 'make not important': 'make important'
+  const label = note.important ? 'make not important' : 'make important'
   return (
     <li>
       {note.value}
@@ -51,12 +51,12 @@ const App = () => {
   const toggleImportanceOf = (id) => {
     const url = `http://localhost:3001/notes/${id}`
     const note = notes.find(n => n.id == id)
-    const changedNote = {...note, important: !note.important}
-    
+    const changedNote = { ...note, important: !note.important }
+
     axios
       .put(url, changedNote)
       .then(response => {
-        setNotes(notes.map(n => n.id != id? n: response.data))
+        setNotes(notes.map(n => n.id != id ? n : response.data))
       })
       .catch(error => {
         console.log(error)
@@ -74,7 +74,7 @@ const App = () => {
         </button>
       </div>
       <ul>
-        {notesFiltered.map(note => <Note key={note.id} note={note} toggleImportance={()=>toggleImportanceOf(note.id)} />)}
+        {notesFiltered.map(note => <Note key={note.id} note={note} toggleImportance={() => toggleImportanceOf(note.id)} />)}
       </ul>
 
       <form onSubmit={addNote}>
