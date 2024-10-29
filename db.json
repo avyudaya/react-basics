@@ -1,0 +1,24 @@
+{
+  "notes": [
+    {
+      "id": "1",
+      "value": "HTML is easy",
+      "important": true
+    },
+    {
+      "id": "2",
+      "value": "HTML is very easy",
+      "important": true
+    },
+    {
+      "id": "f48f",
+      "important": false,
+      "value": "dsffsd"
+    },
+    {
+      "id": "038e",
+      "important": false,
+      "value": "Hello world"
+    }
+  ]
+}
